@@ -1,6 +1,7 @@
 const patterns = [
   '^https:\/\/jobinja\.ir\/companies\/',
   '^https:\/\/jobvision\.ir\/companies\/',
+  '^https:\/\/jobvision\.ir\/jobs\/',
 ]
 
 function extractDomainWithoutTLD(url: string) {

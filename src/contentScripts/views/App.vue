@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { checkURLsStartWith } from '~/logic/check-website'
-import { addJobinjaLink, addJobvisionLink } from '~/logic/websites'
+import { addJobinjaLink, addJobvisionLinkOnCompanyPage } from '~/logic/websites'
 
 onMounted(() => {
   if (!checkURLsStartWith(document.location.href))
@@ -11,9 +11,7 @@ onMounted(() => {
       addJobinjaLink()
       break
     case 'jobvision':
-      console.log('aa')
-
-      addJobvisionLink()
+      addJobvisionLinkOnCompanyPage()
       break
   }
 })

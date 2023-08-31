@@ -1,2 +1,2 @@
 export { addJobinjaLink } from './jobinja'
-export { addJobvisionLink } from './jobvision'
+export { addJobvisionLinkOnCompanyPage } from './jobvision'

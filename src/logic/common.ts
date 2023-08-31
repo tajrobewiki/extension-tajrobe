@@ -10,9 +10,20 @@ function createLogo() {
   return logo
 }
 
-export function createNavigatorLink(company: string) {
+export function createNavigatorLink(company: string, site?: string) {
   const link = document.createElement('a')
-  link.href = `https://tajrobe.wiki/search?q=${company}&company=1&utm_source=extension&utm_medium=extension&utm_campaign=extension`
+  const params = {
+    q: company,
+    company: '1',
+    utm_source: 'extension',
+    utm_medium: 'extension',
+    utm_campaign: 'extension',
+  }
+  if (site)
+    params.site = site
+
+  const queryString = new URLSearchParams(params).toString()
+  link.href = `https://tajrobe.wiki/search?${queryString}`
   link.target = '_blank'
   link.classList.add('c-companyHeader__navigatorLink')
 
@@ -26,5 +37,7 @@ export function createNavigatorLink(company: string) {
   link.appendChild(spanWikiTajrobe)
 
   link.style.position = 'relative'
+  link.style.display = 'flex'
+  link.style.alignItems = 'center'
   return link
 }
